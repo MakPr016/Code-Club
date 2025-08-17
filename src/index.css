@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Wix";
-    src: url("fonts/wix.ttf");
+    src: url("/fonts/wix.ttf");
     font-weight: 400 800;
     font-style: normal;
     font-display: swap;
