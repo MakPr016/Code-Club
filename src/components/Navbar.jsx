@@ -33,7 +33,7 @@ export default function Navbar() {
     gsap.to(underline, {
       transformOrigin: direction === "left" ? "0% 50%" : "100% 50%",
       scaleX: 0,
-      duration: 0.4,
+      duration: 0.3,
       ease: "power2.in"
     });
     gsap.to(link, { color: "#ffffff", duration: 0.3, ease: "power2.in" });
@@ -70,7 +70,7 @@ export default function Navbar() {
         <span className="font-wix font-semibold text-2xl md:text-3xl">CodeClub</span>
       </div>
 
-      <nav className="hidden md:flex font-roboto gap-10 text-sm">
+      <nav className="hidden md:flex font-roboto gap-10 text-[12px] tracking-wide">
         {navLinks.map((link, index) => (
           <a
             key={index}
