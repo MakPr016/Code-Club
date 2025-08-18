@@ -53,6 +53,11 @@
     --sidebar-border:
 }
 
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 @theme {
     --font-wix: "Wix", sans-serif;
     --font-roboto: "Roboto", monospace;

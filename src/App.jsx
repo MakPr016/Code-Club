@@ -10,8 +10,6 @@ const App = () => {
     <Events />
     <Projects />
     <Members />
-    
-    <div className="card">Card</div>
     </>
   )
 }
