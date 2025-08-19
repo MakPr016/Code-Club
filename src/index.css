@@ -53,9 +53,12 @@
     --sidebar-border:
 }
 
-body {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
 }
 
 @theme {

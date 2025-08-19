@@ -2,9 +2,9 @@ import React from 'react'
 
 const Events = () => {
   return (
-    <div className='h-screen w-full'>
+    <section id='events' className='h-screen w-full'>
       Events
-    </div>
+    </section>
   )
 }
 

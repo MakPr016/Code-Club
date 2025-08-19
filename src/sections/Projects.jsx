@@ -25,7 +25,6 @@ const Projects = () => {
     if (i !== index) setIndex(i)
   }
 
-  // compute a window of up to 4 dots centered around the current index
   const maxDots = 4
   const total = projects.length
   let start = Math.max(0, index - Math.floor(maxDots / 2))
@@ -37,7 +36,7 @@ const Projects = () => {
   const dotRange = Array.from({ length: end - start }, (_, k) => start + k)
 
   return (
-    <section className="w-screen">
+    <section id="projects" className="w-screen">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 min-h-screen flex flex-col">
         <div className="relative mx-auto project-titles flex flex-col gap-3 items-center justify-center max-w-2xl max-sm:max-w-[360px]">
           <h1 className="font-wix font-bold text-4xl max-sm:text-3xl max-sm:font-semibold max-sm:text-center">Projects</h1>

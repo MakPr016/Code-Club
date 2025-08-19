@@ -15,7 +15,7 @@ export const projects = [
     title: 'Vigyaanrang Website',
     desc: 'The official website of the Cultral Fest 2025 - Vigyanrang.',
     github: 'https://github.com/MakPr016/Vigyaanrang',
-    preview: '',
+    preview: 'https://vigyaanrang.vercel.app/',
     tags: [
       { label: 'react', icon: 'react', theme: 'cyan' },
       { label: 'express', icon: 'javascript', theme: 'yellow' },
