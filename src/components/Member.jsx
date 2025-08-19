@@ -1,5 +1,5 @@
 import React from 'react'
-import { Instagram } from "lucide-react"
+import { Instagram, Github } from "lucide-react"
 
 const Member = () => {
     return (
@@ -12,6 +12,8 @@ const Member = () => {
             </div>
 
             <div className='flex justify-center items-center gap-2 mt-8'>
+                <Instagram className='text-[#999]'/>
+                <Github className='text-[#999]'/>
                 <Instagram className='text-[#999]'/>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import { Hero, About, Events, Projects, Members } from './sections'
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
     <Events />
     <Projects />
     <Members />
+    <Footer />
     </>
   )
 }
