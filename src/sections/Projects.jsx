@@ -39,7 +39,7 @@ const Projects = () => {
     <section id="projects" className="w-screen">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 min-h-screen flex flex-col">
         <div className="relative mx-auto project-titles flex flex-col gap-3 items-center justify-center max-w-2xl max-sm:max-w-[360px]">
-          <h1 className="font-wix font-bold text-4xl max-sm:text-3xl max-sm:font-semibold max-sm:text-center">Projects</h1>
+          <h1 className="font-wix font-semibold text-4xl max-sm:text-3xl max-sm:font-semibold max-sm:text-center">Projects</h1>
           <p className="font-roboto text-sm max-sm:text-[12px] text-[#b9b9b9] max-sm:text-center">
             Explore the diverse range of projects developed by our club members and the club itself. Each project showcases the skills and creativity of our community.
           </p>
