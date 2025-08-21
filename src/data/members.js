@@ -57,6 +57,14 @@ export const members = [
         image: ""
     },
     {
+        name: "Ujesh Kumar Yadav",
+        email: "sadiyaakhann317@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ujesh-kumar-yadav/",
+        github: "https://github.com/UJESH2K",
+        team: "core",
+        image: ""
+    },
+    {
         name: "Mayank Kumar Singh",
         email: "makcode31sk@gmail.com",
         linkedin: "https://www.linkedin.com/in/mayank-kumar-singh-401aa4308/",
@@ -69,14 +77,6 @@ export const members = [
         email: "sadiyaakhann317@gmail.com",
         linkedin: "https://www.linkedin.com/in/sadiya-khan-32718527a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         github: "https://github.com/Sadzz31sk",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Ujesh Kumar Yadav",
-        email: "sadiyaakhann317@gmail.com",
-        linkedin: "https://www.linkedin.com/in/ujesh-kumar-yadav/",
-        github: "https://github.com/UJESH2K",
         team: "core",
         image: ""
     },

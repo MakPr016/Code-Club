@@ -135,7 +135,7 @@ export default function Members() {
           <button
             key={t}
             onClick={() => setActive(t)}
-            className={`relative pb-1 text-sm uppercase tracking-wide transition-colors whitespace-nowrap ${
+            className={`relative pb-1 text-sm font-bold uppercase tracking-wide transition-colors whitespace-nowrap ${
               active === t ? "text-emerald-400" : "text-gray-300 hover:text-white"
             }`}
           >
