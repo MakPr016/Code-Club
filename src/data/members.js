@@ -49,6 +49,14 @@ export const members = [
         image: ""
     },
     {
+        name: "Sulaiman Abdulla Shariff ",
+        email: "sulaiman05221@gmail.com",
+        linkedin: "https://www.linkedin.com/in/sulaiman-abdulla-shariff",
+        github: "https://github.com/sulaiman-shariff",
+        team: "core",
+        image: ""
+    },
+    {
         name: "Jitin Raju",
         email: "jitin4530@gmail.com",
         linkedin: "https://www.linkedin.com/in/jitin-raju-3a751527a/",
@@ -61,6 +69,14 @@ export const members = [
         email: "sadiyaakhann317@gmail.com",
         linkedin: "https://www.linkedin.com/in/ujesh-kumar-yadav/",
         github: "https://github.com/UJESH2K",
+        team: "core",
+        image: ""
+    },
+    {
+        name: "Mohammed Abdul Jabbar",
+        email: "msj_999@outlook.com",
+        linkedin: "https://www.linkedin.com/in/mohammed-abdul-jabbar-bb3994220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        github: "https://github.com/mohammedabduljabbar",
         team: "core",
         image: ""
     },
@@ -85,6 +101,14 @@ export const members = [
         email: "tanishaprakash2712@gmail.com",
         linkedin: "https://www.linkedin.com/in/sarajain6 ",
         github: "https://github.com/SaraJain26",
+        team: "core",
+        image: ""
+    },
+    {
+        name: "Aditya Rajesh ",
+        email: "adityarajesh010@gmail.com",
+        linkedin: "https://www.linkedin.com/in/aditya-rajesh-222925307",
+        github: "https://github.com/adityarajesh010",
         team: "core",
         image: ""
     },
