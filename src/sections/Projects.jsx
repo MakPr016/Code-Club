@@ -1,11 +1,15 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Project from '../components/Project'
 import { projects } from '../data/projects'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const Projects = () => {
   const [index, setIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const [isInteracting, setIsInteracting] = useState(false)
   const trackRef = useRef(null)
+  const intervalRef = useRef(null)
+  const interactionTimeoutRef = useRef(null)
 
   useEffect(() => {
     if (index >= projects.length) setIndex(0)
@@ -17,13 +21,95 @@ const Projects = () => {
     setIndex(i)
   }
 
+  const nextSlide = useCallback(() => {
+    setIndex(prevIndex => {
+      if (prevIndex >= projects.length - 1) {
+        return 0 // Reset to first slide
+      }
+      return prevIndex + 1
+    })
+  }, [projects.length])
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    const shouldScroll = !isHovered && !isInteracting
+
+    if (shouldScroll) {
+      intervalRef.current = setInterval(() => {
+        nextSlide()
+      }, 3000)
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
+    }
+  }, [isHovered, isInteracting, nextSlide])
+
+  // Update scroll position when index changes (for auto-scroll only)
+  useEffect(() => {
+    // Only auto-scroll to position if not currently interacting
+    if (!isHovered && !isInteracting) {
+      const wrap = trackRef.current
+      if (wrap) {
+        // Calculate the scroll position manually
+        const scrollLeft = index * wrap.offsetWidth
+        wrap.scrollTo({
+          left: scrollLeft,
+          behavior: 'smooth'
+        })
+      }
+    }
+  }, [index, isHovered, isInteracting])
+
   const onScroll = () => {
+    // Disable scroll detection during auto-scroll to prevent conflicts
+    if (!isHovered && !isInteracting) return
+    
     const wrap = trackRef.current
     if (!wrap) return
     const { scrollLeft, offsetWidth } = wrap
     const i = Math.round(scrollLeft / offsetWidth)
     if (i !== index) setIndex(i)
   }
+
+  const handleInteraction = () => {
+    setIsInteracting(true)
+    
+    // Clear existing timeout
+    if (interactionTimeoutRef.current) {
+      clearTimeout(interactionTimeoutRef.current)
+    }
+    
+    // Resume auto-scroll after 3 seconds of no interaction
+    interactionTimeoutRef.current = setTimeout(() => {
+      setIsInteracting(false)
+    }, 3000)
+  }
+
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+  }
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (interactionTimeoutRef.current) {
+        clearTimeout(interactionTimeoutRef.current)
+      }
+    }
+  }, [])
 
   const maxDots = 4
   const total = projects.length
@@ -48,6 +134,8 @@ const Projects = () => {
         <div
           ref={trackRef}
           onScroll={onScroll}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           className="relative mt-4 md:mt-5 flex overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden mx-auto w-full max-w-6xl"
           style={{ scrollSnapType: 'x mandatory' }}
         >

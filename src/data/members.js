@@ -57,14 +57,6 @@ export const members = [
     "image": ""
   },
   {
-    "name": "Aditya Rajesh",
-    "email": "adityarajesh010@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/aditya-rajesh-222925307",
-    "github": "https://github.com/adityarajesh010",
-    "team": "core",
-    "image": ""
-  },
-  {
     "name": "Akhil Shibu",
     "email": "akhilshibu2710@gmail.com",
     "linkedin": "https://www.linkedin.com/in/akhil-dev404",
@@ -77,6 +69,14 @@ export const members = [
     "email": "makcode31sk@gmail.com",
     "linkedin": "https://www.linkedin.com/in/mayank-kumar-singh-401aa4308/",
     "github": "https://github.com/MakPr016",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Sadiya Khan",
+    "email": "sadiyakhann317@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sadiya-khan-32718527a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "github": "https://github.com/Sadzz31sk",
     "team": "core",
     "image": ""
   },
@@ -105,10 +105,10 @@ export const members = [
     "image": ""
   },
   {
-    "name": "Sadiya Khan",
-    "email": "sadiyakhann317@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/sadiya-khan-32718527a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    "github": "https://github.com/Sadzz31sk",
+    "name": "Aditya Rajesh",
+    "email": "adityarajesh010@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/aditya-rajesh-222925307",
+    "github": "https://github.com/adityarajesh010",
     "team": "core",
     "image": ""
   },
