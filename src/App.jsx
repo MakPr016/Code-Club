@@ -1,19 +1,46 @@
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Loading from './components/Loading'
 import Background from './components/Background'
 import { Hero, About, Events, Projects, Members } from './sections'
+import { useState, useEffect } from 'react'
 
 const App = () => {
+  const [loading, setLoading] = useState(true)
+  const [animateOut, setAnimateOut] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimateOut(true)
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleAnimationEnd = () => {
+    setLoading(false) 
+  }
+
   return (
     <>
-    {/* <Background /> */}
-    <Navbar />
-    <Hero />
-    <About />
-    <Events />
-    <Projects />
-    <Members />
-    <Footer />
+      {/* <Background /> */}
+      {loading && (
+        <Loading
+          animateOut={animateOut}
+          onAnimationEnd={handleAnimationEnd}
+        />
+      )}
+      {!loading && (
+        <>
+          <Navbar />
+          <Hero />
+          <About />
+          <Events />
+          <Projects />
+          <Members />
+          <Footer />
+        </>
+      )}
     </>
   )
 }
