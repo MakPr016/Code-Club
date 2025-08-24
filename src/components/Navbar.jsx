@@ -2,11 +2,14 @@ import { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { navLinks } from "../data/links";
 import { Menu, X } from "lucide-react";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP)
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const overlayRef = useRef(null);
+  const headerRef = useRef(null);
 
   const handleEnter = (e) => {
     const link = e.currentTarget;
@@ -40,6 +43,14 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    gsap.fromTo(
+      headerRef.current,
+      { y: -100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, delay: 0.2, ease: "power3.out" }
+    );
+  }, []);
+
+  useEffect(() => {
     if (menuRef.current && overlayRef.current) {
       if (isOpen) {
         gsap.set(menuRef.current, { display: "flex" });
@@ -64,7 +75,9 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[100] flex justify-between px-6 md:px-20 py-2 items-center bg-black text-white">
+    <header 
+      ref={headerRef}
+      className="fixed top-0 left-0 w-full z-[100] flex justify-between px-6 md:px-20 py-2 items-center bg-black text-white">
       <div className="flex items-center gap-2">
         <img src="/icons/logo_sm.png" alt="Logo" className="w-auto h-[36px]" />
         <span className="font-wix font-semibold text-2xl md:text-3xl">CodeClub</span>
