@@ -32,16 +32,6 @@ const Events = () => {
     </div>
   </div>
 
-  {/* <div className="card py-10 px-7 flex flex-col md:row-span-4 md:row-start-3">
-    <div className='card-text space-y-3 md:flex-1/2'>
-      <p className='text-[12px] text-[#ccc]'>Workshop</p>
-      <h3 className='text-lg font-medium'>Mobile App Development with Flutter</h3>
-      <p className='text-sm text-[#ccc]'>Learn to create cross-platform mobile apps with Flutter, Google's UI toolkit. This workshop covers the fundamentals of Flutter development.</p>
-    </div>
-    <div className='md:flex-1/2 flex justify-center items-center w-full h-[80%] mt-4 md:mt-0'>
-      <img src="/images/events/load.svg" alt="Blocks"/>
-    </div>
-  </div> */}
   <div className="card md:row-span-4 md:row-start-3 py-10 px-7">
           <div className='card-text space-y-3 flex-1/2'>
             <p className='text-[12px] text-[#ccc]'>Workshop</p>
