@@ -20,15 +20,22 @@ export default function Footer() {
             <div className="flex items-start gap-3 text-white/80">
               <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
               <div className="leading-snug">
-                <p>Atria Institute of Technology</p>
+                <a 
+                  href="https://maps.app.goo.gl/AudykkzcMicQysA57" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className=" hover:underline"
+                >
+                  <p>Atria Institute of Technology</p>
                 <p>Anandanagar, Bengaluru, Karnataka 560024</p>
+                </a>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-3">Quick Links</h4>
+            <h3 className="mb-3">Quick Links</h3>
             <ul className="space-y-2 text-white/80">
               <li>
                 <a href="#about" className="hover:text-white transition-colors">
@@ -46,18 +53,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#workshops" className="hover:text-white transition-colors">
-                  Workshops
-                </a>
-              </li>
-              <li>
-                <a href="#resources" className="hover:text-white transition-colors">
-                  Resources
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-white transition-colors">
-                  Contact
+                <a href="#members" className="hover:text-white transition-colors">
+                  Members
                 </a>
               </li>
             </ul>
@@ -65,18 +62,18 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-3">Contact</h4>
+            <h3 className="mb-3">Contact</h3>
             <div className="space-y-2 text-white/80">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 <a
-                  href="mailto:codeclub@atria.edu"
+                  href="mailto:code.club.atria@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  codeclub@atria.edu
+                  code.club.atria@gmail.com
                 </a>
               </div>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 <a
                   href="tel:+918012345678"
@@ -84,37 +81,41 @@ export default function Footer() {
                 >
                   +91 80 1234 5678
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
 
           {/* Social Media */}
           <div>
-            <h4 className="mb-3">Follow Us</h4>
+            <h3 className="mb-3">Follow Us</h3>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://github.com/CODE-CLUB-ATRIA"
+                target="_blank" 
                 className="text-white/70 hover:text-white transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/atriacode/"
+                target="_blank" 
                 className="text-white/70 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/atriacode?igsh=MWNwMjAzZzB6bnRhbg=="
+                target="_blank" 
                 className="text-white/70 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/codeatriait?t=dvZdRg514Vfm2w3lC9m6gw&s=09"
+                target="_blank" 
                 className="text-white/70 hover:text-white transition-colors"
                 aria-label="Twitter"
               >
@@ -126,19 +127,20 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-6 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-white/80">
-            <p>
+          <div className="flex flex-col items-center justify-center text-white/80 ">
+            <p className="text-center">
               © {new Date().getFullYear()} Code Club, Atria Institute of Technology. All rights reserved.
             </p>
-            <div className="flex gap-6">
+            {/* <div className="flex gap-6">
               <a href="#privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </a>
               <a href="#terms" className="hover:text-white transition-colors">
                 Terms of Service
               </a>
-            </div>
+            </div> */}
           </div>
+
         </div>
       </div>
     </footer>
