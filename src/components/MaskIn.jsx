@@ -3,15 +3,14 @@ import gsap from "gsap"
 
 const MaskIn = ({
   children,
+  delay = 0,
   duration = 0.7,
   y = 24,
   opacity = 0,
   stagger = 0,
   ease = "power3.out",
   className = "",
-  timeline,
-  position = "+=0",   // <-- GSAP timeline position (label, relative, or time)
-  standalone = false, // only animates automatically if true
+  timeline, 
 }) => {
   const scope = useRef(null)
 
@@ -22,21 +21,21 @@ const MaskIn = ({
     if (timeline) {
       timeline.fromTo(
         el,
-        { y, opacity, clipPath: "inset(100% 0 0 0)" },
-        { y: 0, opacity: 1, clipPath: "inset(0% 0 0 0)", duration, ease, stagger },
-        position // <-- use label/offset instead of hardcoded delay
+        { y, opacity },
+        { y: 0, opacity: 1, duration, ease, stagger },
+        `+=${delay}`
       )
-    } else if (standalone) {
+    } else {
       const ctx = gsap.context(() => {
         gsap.fromTo(
           el,
-          { y, opacity, clipPath: "inset(100% 0 0 0)" },
-          { y: 0, opacity: 1, clipPath: "inset(0% 0 0 0)", duration, ease, stagger }
+          { y, opacity },
+          { y: 0, opacity: 1, delay, duration, ease, stagger }
         )
       }, scope)
       return () => ctx.revert()
     }
-  }, [duration, y, opacity, stagger, ease, timeline, position, standalone])
+  }, [delay, duration, y, opacity, stagger, ease, timeline])
 
   return (
     <div ref={scope} className={className}>
