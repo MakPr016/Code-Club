@@ -24,13 +24,12 @@ const Projects = () => {
   const nextSlide = useCallback(() => {
     setIndex(prevIndex => {
       if (prevIndex >= projects.length - 1) {
-        return 0 // Reset to first slide
+        return 0 
       }
       return prevIndex + 1
     })
   }, [projects.length])
 
-  // Auto-scroll functionality
   useEffect(() => {
     const shouldScroll = !isHovered && !isInteracting
 
@@ -53,13 +52,10 @@ const Projects = () => {
     }
   }, [isHovered, isInteracting, nextSlide])
 
-  // Update scroll position when index changes (for auto-scroll only)
   useEffect(() => {
-    // Only auto-scroll to position if not currently interacting
     if (!isHovered && !isInteracting) {
       const wrap = trackRef.current
       if (wrap) {
-        // Calculate the scroll position manually
         const scrollLeft = index * wrap.offsetWidth
         wrap.scrollTo({
           left: scrollLeft,
@@ -70,7 +66,6 @@ const Projects = () => {
   }, [index, isHovered, isInteracting])
 
   const onScroll = () => {
-    // Disable scroll detection during auto-scroll to prevent conflicts
     if (!isHovered && !isInteracting) return
     
     const wrap = trackRef.current
@@ -82,13 +77,11 @@ const Projects = () => {
 
   const handleInteraction = () => {
     setIsInteracting(true)
-    
-    // Clear existing timeout
+
     if (interactionTimeoutRef.current) {
       clearTimeout(interactionTimeoutRef.current)
     }
-    
-    // Resume auto-scroll after 3 seconds of no interaction
+
     interactionTimeoutRef.current = setTimeout(() => {
       setIsInteracting(false)
     }, 3000)
@@ -102,7 +95,6 @@ const Projects = () => {
     setIsHovered(false)
   }
 
-  // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       if (interactionTimeoutRef.current) {

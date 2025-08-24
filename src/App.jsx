@@ -33,11 +33,13 @@ const App = () => {
       {!loading && (
         <>
           <Navbar />
-          <Hero />
-          <About />
-          <Events />
-          <Projects />
-          <Members />
+          <main className='flex flex-col jusitfy-center'>
+            <Hero />
+            <About />
+            <Events />
+            <Projects />
+            <Members />
+          </main>
           <Footer />
         </>
       )}

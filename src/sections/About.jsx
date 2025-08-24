@@ -29,6 +29,8 @@ const About = () => {
       gsap.set(cards, {
         clipPath: "inset(100% 0% 0% 0%)",
         opacity: 0,
+        y: 200,
+        transformOrigin: "top center",
       })
 
       aboutTl
@@ -53,7 +55,8 @@ const About = () => {
           {
             clipPath: "inset(0% 0% 0% 0%)",
             opacity: 1,
-            duration: 0.8,
+            y: 0, 
+            duration: 0.6,
             ease: "power3.out",
             stagger: 0.3,
           },
