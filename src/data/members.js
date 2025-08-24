@@ -32,39 +32,55 @@ export const members = [
         image: "" 
     },
 
-    {
-        name: "Davana P Lad",
-        email: "davanaplad207@gmail.com",
-        linkedin: "https://www.linkedin.com/in/davana-p-lad-a83620364/",
-        github: "https://github.com/dav605",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Mahamad Zaid",
-        email: "mahamad9243@gmail.com",
-        linkedin: "http://www.linkedin.com/in/mahamad-zaid-b5361a2a5",
-        github: "https://github.com/Zaidnaz",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Sulaiman Abdulla Shariff ",
-        email: "sulaiman05221@gmail.com",
-        linkedin: "https://www.linkedin.com/in/sulaiman-abdulla-shariff",
-        github: "https://github.com/sulaiman-shariff",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Jitin Raju",
-        email: "jitin4530@gmail.com",
-        linkedin: "https://www.linkedin.com/in/jitin-raju-3a751527a/",
-        github: "https://github.com/Jrine0",
-        team: "core",
-        image: ""
-    },
-    {
+  {
+    "name": "Davana P Lad",
+    "email": "davanaplad207@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/davana-p-lad-a83620364/",
+    "github": "https://github.com/dav605",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Mahamad Zaid",
+    "email": "mahamad9243@gmail.com",
+    "linkedin": "http://www.linkedin.com/in/mahamad-zaid-b5361a2a5",
+    "github": "https://github.com/Zaidnaz",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Sulaiman Abdulla Shariff",
+    "email": "sulaiman05221@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sulaiman-abdulla-shariff",
+    "github": "https://github.com/sulaiman-shariff",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Aditya Rajesh",
+    "email": "adityarajesh010@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/aditya-rajesh-222925307",
+    "github": "https://github.com/adityarajesh010",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Akhil Shibu",
+    "email": "akhilshibu2710@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/akhil-dev404",
+    "github": "https://github.com/Hydra404coder",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Mayank Kumar Singh",
+    "email": "makcode31sk@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/mayank-kumar-singh-401aa4308/",
+    "github": "https://github.com/MakPr016",
+    "team": "core",
+    "image": ""
+  },
+  {
         name: "Ujesh Kumar Yadav",
         email: "sadiyaakhann317@gmail.com",
         linkedin: "https://www.linkedin.com/in/ujesh-kumar-yadav/",
@@ -72,62 +88,72 @@ export const members = [
         team: "core",
         image: ""
     },
-    {
-        name: "Mohammed Abdul Jabbar",
-        email: "msj_999@outlook.com",
-        linkedin: "https://www.linkedin.com/in/mohammed-abdul-jabbar-bb3994220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-        github: "https://github.com/mohammedabduljabbar",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Mayank Kumar Singh",
-        email: "makcode31sk@gmail.com",
-        linkedin: "https://www.linkedin.com/in/mayank-kumar-singh-401aa4308/",
-        github: "https://github.com/MakPr016",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Sadiya Khan",
-        email: "sadiyaakhann317@gmail.com",
-        linkedin: "https://www.linkedin.com/in/sadiya-khan-32718527a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        github: "https://github.com/Sadzz31sk",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Sara Jain",
-        email: "tanishaprakash2712@gmail.com",
-        linkedin: "https://www.linkedin.com/in/sarajain6 ",
-        github: "https://github.com/SaraJain26",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Aditya Rajesh ",
-        email: "adityarajesh010@gmail.com",
-        linkedin: "https://www.linkedin.com/in/aditya-rajesh-222925307",
-        github: "https://github.com/adityarajesh010",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Aditya Rajesh ",
-        email: "adityarajesh010@gmail.com",
-        linkedin: "https://www.linkedin.com/in/aditya-rajesh-222925307",
-        github: "https://github.com/adityarajesh010",
-        team: "core",
-        image: ""
-    },
-    {
-        name: "Harika Murali",
-        email: "harikamurali20@gmail.com",
-        linkedin: "https://www.linkedin.com/in/harika-murali-45b745323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        github: "https://github.com/HarikaMurali",
-        team: "core",
-        image: ""
-    },
+  {
+    "name": "Jitin Raju",
+    "email": "jitin4530@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/jitin-raju-3a751527a/",
+    "github": "https://github.com/Jrine0",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Shivam Srivastava",
+    "email": "srivastava3184@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/shivam-srivastava-12b8b6282/",
+    "github": "",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Sadiya Khan",
+    "email": "sadiyakhann317@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sadiya-khan-32718527a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "github": "https://github.com/Sadzz31sk",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Sara Jain",
+    "email": "jainsara2605@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sarajain6",
+    "github": "https://github.com/SaraJain26",
+    "team": "core",
+    "image": ""
+  },
+  
+  {
+    "name": "Harika Murali",
+    "email": "harikamurali20@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/harika-murali-45b745323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "github": "https://github.com/HarikaMurali",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "PVN Vikrant",
+    "email": "pratapvikrant1510@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/pvn-vikrant-7139052a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "github": "https://github.com/pvnvik",
+    "team": "core",
+    "image": ""
+  },
+  
+  {
+    "name": "Mohammed Abdul Jabbar",
+    "email": "msj_999@outlook.com",
+    "linkedin": "https://www.linkedin.com/in/mohammed-abdul-jabbar-bb3994220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "github": "https://github.com/mohammedabduljabbar",
+    "team": "core",
+    "image": ""
+  },
+  {
+    "name": "Parineeta Rana",
+    "email": "parineeta.gcp.jam.atria@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/parineeta-rana9110253861/",
+    "github": "https://github.com/Parineeta-2307",
+    "team": "core",
+    "image": ""
+  },
 
     { name: "Umme Kulsum", email: "Kulsum020704@gmail.com", linkedin: "", github: "", team: "design", image: "" },
     { name: "Akshay Kumar", email: "pujerakshay6002@gmail.com", linkedin: "", github: "", team: "design", image: "" },
