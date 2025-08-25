@@ -90,14 +90,6 @@ const Hero = () => {
           className="font-roboto text-md max-sm:text-[12px] text-center"
         />
       </div>
-      {/* <div className="buttons-container flex flex-row max-sm:flex-col items-center gap-5 max-sm:gap-3">
-        <MaskIn timeline={tlRef.current} delay={0.3}>
-          <Button text="Explore Events" href={'#events'} caps={true} />
-        </MaskIn>
-        <MaskIn timeline={tlRef.current} delay={0.4}>
-          <Button text="Explore Projects" href={'#projects'} caps={true} />
-        </MaskIn>
-      </div> */}
       <div className="buttons-container flex flex-row max-sm:flex-col items-center gap-5 max-sm:gap-3">
         <MaskIn timeline={tlRef.current} delay={0.3}>
           <Button

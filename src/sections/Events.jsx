@@ -1,10 +1,56 @@
+import { useRef, useEffect } from "react"
 import { events } from "../data/events"
 import AnimatedText from '../components/AnimateText'
 import Button from "../components/Button"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Events = () => {
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const headings = sectionRef.current.querySelectorAll(".animated-text")
+      const cards = sectionRef.current.querySelectorAll(".card")
+
+      // Set initial states
+      gsap.set(headings, { yPercent: 100, opacity: 0 })
+      gsap.set(cards, { y: 50, opacity: 0 })
+
+      // Timeline for scroll-triggered animation
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          toggleActions: "play none none none",
+        },
+      })
+
+      // Animate headings
+      tl.to(headings, {
+        yPercent: 0,
+        opacity: 1,
+        stagger: 0.1,
+        ease: "power3.out",
+      })
+
+      // Animate cards
+      tl.to(cards, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 0.6,
+        ease: "power3.out",
+      }, "-=0.2")
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section id='events' className='min-h-screen w-full mb-10'>
+    <section id='events' ref={sectionRef} className='min-h-screen w-full mb-10'>
       <div className="relative mx-auto mb-10 project-titles flex flex-col gap-3 items-center justify-center max-w-3xl max-sm:max-w-[360px]">
         <AnimatedText
           text="CodeClub Events"

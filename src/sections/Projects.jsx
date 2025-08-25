@@ -2,6 +2,10 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import Project from '../components/Project'
 import { projects } from '../data/projects'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
   const [index, setIndex] = useState(0)
@@ -10,6 +14,7 @@ const Projects = () => {
   const trackRef = useRef(null)
   const intervalRef = useRef(null)
   const interactionTimeoutRef = useRef(null)
+  const sectionRef = useRef(null)
 
   useEffect(() => {
     if (index >= projects.length) setIndex(0)
@@ -22,28 +27,19 @@ const Projects = () => {
   }
 
   const nextSlide = useCallback(() => {
-    setIndex(prevIndex => {
-      if (prevIndex >= projects.length - 1) {
-        return 0 
-      }
-      return prevIndex + 1
-    })
+    setIndex(prevIndex => (prevIndex >= projects.length - 1 ? 0 : prevIndex + 1))
   }, [projects.length])
 
   useEffect(() => {
     const shouldScroll = !isHovered && !isInteracting
-
     if (shouldScroll) {
-      intervalRef.current = setInterval(() => {
-        nextSlide()
-      }, 3000)
+      intervalRef.current = setInterval(nextSlide, 3000)
     } else {
       if (intervalRef.current) {
         clearInterval(intervalRef.current)
         intervalRef.current = null
       }
     }
-
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current)
@@ -57,17 +53,13 @@ const Projects = () => {
       const wrap = trackRef.current
       if (wrap) {
         const scrollLeft = index * wrap.offsetWidth
-        wrap.scrollTo({
-          left: scrollLeft,
-          behavior: 'smooth'
-        })
+        wrap.scrollTo({ left: scrollLeft, behavior: 'smooth' })
       }
     }
   }, [index, isHovered, isInteracting])
 
   const onScroll = () => {
     if (!isHovered && !isInteracting) return
-    
     const wrap = trackRef.current
     if (!wrap) return
     const { scrollLeft, offsetWidth } = wrap
@@ -77,30 +69,36 @@ const Projects = () => {
 
   const handleInteraction = () => {
     setIsInteracting(true)
-
-    if (interactionTimeoutRef.current) {
-      clearTimeout(interactionTimeoutRef.current)
-    }
-
-    interactionTimeoutRef.current = setTimeout(() => {
-      setIsInteracting(false)
-    }, 3000)
+    if (interactionTimeoutRef.current) clearTimeout(interactionTimeoutRef.current)
+    interactionTimeoutRef.current = setTimeout(() => setIsInteracting(false), 3000)
   }
 
-  const handleMouseEnter = () => {
-    setIsHovered(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsHovered(false)
-  }
+  const handleMouseEnter = () => setIsHovered(true)
+  const handleMouseLeave = () => setIsHovered(false)
 
   useEffect(() => {
     return () => {
-      if (interactionTimeoutRef.current) {
-        clearTimeout(interactionTimeoutRef.current)
-      }
+      if (interactionTimeoutRef.current) clearTimeout(interactionTimeoutRef.current)
     }
+  }, [])
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const headings = sectionRef.current.querySelectorAll(".animated-text")
+      const cards = sectionRef.current.querySelectorAll(".project-card")
+      gsap.set(headings, { yPercent: 100, opacity: 0 })
+      gsap.set(cards, { y: 50, opacity: 0 })
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          toggleActions: "play none none none",
+        },
+      })
+      tl.to(headings, { yPercent: 0, opacity: 1, stagger: 0.1, ease: "power3.out" })
+      tl.to(cards, { y: 0, opacity: 1, stagger: 0.2, duration: 0.6, ease: "power3.out" }, "-=0.2")
+    }, sectionRef)
+    return () => ctx.revert()
   }, [])
 
   const maxDots = 4
@@ -114,11 +112,11 @@ const Projects = () => {
   const dotRange = Array.from({ length: end - start }, (_, k) => start + k)
 
   return (
-    <section id="projects" className="w-screen">
+    <section id="projects" ref={sectionRef} className="w-screen">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 min-h-screen flex flex-col">
         <div className="relative mx-auto project-titles flex flex-col gap-3 items-center justify-center max-w-2xl max-sm:max-w-[360px]">
-          <h1 className="font-wix font-semibold text-4xl max-sm:text-3xl max-sm:font-semibold max-sm:text-center">Projects</h1>
-          <p className="font-roboto text-sm max-sm:text-[12px] text-[#b9b9b9] max-sm:text-center">
+          <h1 className="font-wix font-semibold text-4xl max-sm:text-3xl animated-text">Projects</h1>
+          <p className="font-roboto text-sm max-sm:text-[12px] text-[#b9b9b9] animated-text">
             Explore the diverse range of projects developed by our club members and the club itself. Each project showcases the skills and creativity of our community.
           </p>
         </div>
@@ -134,7 +132,7 @@ const Projects = () => {
           {projects.map((p, i) => (
             <div
               key={i}
-              className="shrink-0 w-full flex justify-center items-center snap-start px-3 md:px-6 min-h-[78vh] md:min-h-[72vh]"
+              className="shrink-0 w-full flex justify-center items-center snap-start px-3 md:px-6 min-h-[78vh] md:min-h-[72vh] project-card"
             >
               <div className="w-full max-w-[920px] sm:max-w-[960px]">
                 <Project
