@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimateOut(true)
-    }, 2000)
+    }, 5000)
 
     return () => clearTimeout(timer)
   }, [])
